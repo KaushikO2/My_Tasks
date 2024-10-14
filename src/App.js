@@ -103,7 +103,7 @@ class App extends Component {
         <TaskInputContainer>
           <Heading>Create a Task!</Heading>
           <InputContainer>
-            <LabelText for="textInput">Task</LabelText>
+            <LabelText htmlFor="textInput">Task</LabelText>
             <Input
               id="textInput"
               type="text"
@@ -111,14 +111,16 @@ class App extends Component {
               value={inputTask}
               onChange={this.onChangeInputTask}
             />
-            <LabelText for="optionInput">Tags</LabelText>
+            <LabelText htmlFor="optionInput">Tags</LabelText>
             <Select
               id="optionInput"
               value={selectTag}
               onChange={this.onChangeSelectTag}
             >
               {tagsList.map(eachTag => (
-                <option value={eachTag.optionId}>{eachTag.displayText}</option>
+                <option key={eachTag.optionId} value={eachTag.optionId}>
+                  {eachTag.displayText}
+                </option>
               ))}
             </Select>
           </InputContainer>
